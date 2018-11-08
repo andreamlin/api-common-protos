@@ -3,14 +3,10 @@ common:
   organization_name: google
   src_proto_paths:
   - api
-  - cloud/audit
   - logging/type
   - longrunning
   - rpc
   - type
-  # Exclusions
-  - -api/servicemanagement
-  - -api/servicecontrol
 artifacts:
 - name: java_grpc
   type: GRPC
