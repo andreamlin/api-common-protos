@@ -1,3 +1,4 @@
+# Artman file for compiling and packaging protos into a language of choice.
 common:
   api_name: common-protos
   organization_name: google
