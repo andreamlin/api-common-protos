@@ -16,3 +16,22 @@ jobs:
       - run:
           name: Verify that the protos compile.
           command: protoc --proto_path=. google/**/*.proto -o /tmp/google.desc
+  deploy-java:
+    docker:
+      - image: googleapis/artman:0.15.5
+    steps:
+      - checkout
+      - run:
+          name: Generate grpc- and proto-google-common-protos Java packages.
+          command: |
+            artman --config google/artman_core.yaml generate java_grpc
+      - run:
+          name: Post processing for packages
+          command: |
+            cd artman-genfiles/java
+            # Remove pom.xml files.
+            find . -name pom.xml | xargs rm
+
+
+    branch: input-contract #TODO
+
