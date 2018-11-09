@@ -76,7 +76,8 @@ extend google.protobuf.FieldOptions {
   // See `google/api/resources.proto`.
   ResourceSet resource_set = 1054;
 
-  // A reference to another resource message or resource definition.
+  // A reference to another resource message,
+  // or resource or resource set definition.
   // See `google/api/resources.proto`.
   string resource_reference = 1055;
 
